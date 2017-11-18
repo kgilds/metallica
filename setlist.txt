@@ -1,0 +1,146 @@
+id	song_title
+2	Enter Sandman
+2	Creeping Death
+2	Harvester of Sorrow
+2	Welcome Home (Sanitarium)
+2	Sad But True
+2	Bass Solo
+2	Through The Never
+2	The Unforgiven
+2	Justice Medley
+2	Drum Solo
+2	Guitar Solo
+2	The Four Horseman
+2	For Whom the Bell Tolls
+2	Fade to Black
+2	Whiplash
+2	Master of Puppets
+2	Seek and Destroy
+2	One
+2	Last Caress
+2	Am I Evil?
+2	Battery
+3	So What
+3	Creeping Death
+3	Sad But True
+3	Ain't My Bitch
+3	Whiplash
+3	Fade to Black
+3	King Nothing
+3	One
+3	Until It Sleeps
+3	For Whom the Bell Tolls
+3	Wherever I May Roam
+3	Nothing Else Matters
+3	Enter Sandman
+3	Last Caress
+3	Master of Puppets
+3	Overkill
+4	So What
+4	Creeping Death
+4	Sad But True
+4	Ain't My Bitch
+4	Whiplash
+4	King Nothing
+4	One
+4	Wasting My Hate
+4	Bass/Guitar Solo
+4	Nothing Else Matters
+4	Until It Sleeps
+4	For Whom the Bell Tolls
+4	Wherever I May Roam
+4	Fade to Black
+4	Kill/Ride Medley
+4	Last Caress
+4	Master of Puppets
+4	Enter Sandman
+4	Am I Evil?
+4	Motorbreath
+5	Die, Die, My Darling!
+5	Fuel
+5	For Whom the Bell Tolls
+5	The Four Horseman
+5	Whiskey in the Jar
+5	2X4
+5	No Leaf Clover
+5	Sad But True
+5	Creeping Death
+5	Bleeding Me
+5	Masterarium
+5	Blackend
+5	Nothing Else Matters
+5	King Nothing
+5	One
+5	Turn the Page
+5	Enter Sandman
+5	Phantom Lord
+6	Blackend
+6	Fuel
+6	Sad But True
+6	No Leaf Clover
+6	Holier Than Thou
+6	The Unforgiven
+6	The God that Failed
+6	St. Anger
+6	Fade to Black
+6	Creeping Death
+6	Fighting Fire with Fire
+6	Wherever I May Roam
+6	Nothing Else Matters
+6	Master of Puppets
+6	One
+6	Enter Sandman
+6	Disposable Heroes
+6	Seek and Destroy
+7	That was Just Your life
+7	The End of The Line
+7	Harvester of Sorrow
+7	Through The Never
+7	One
+7	Broken, Beat, and Scared
+7	Cyanide
+7	Sad But True
+7	Welcome Home (Sanitarium)
+7	All Nightmare Long
+7	The Day that Never Comes
+7	Master of Puppets
+7	Battery
+7	Nothing Else Matters
+7	Enter Sandman
+7	The Wait
+7	Trapped Under Ice
+7	Seek and Destroy
+8	Hardwired
+8	Atlas, Rise
+8	For Whom the Bell Tolls
+8	Fuel
+8	The Unforgiven
+8	Now that we are dead
+8	Moth Into Flame
+8	Wherever I May Roam
+8	Halo on Fire
+8	Hit the Lights
+8	Sad But True
+8	One
+8	Master of Puppets
+8	Fade to Black
+8	Seek and Destroy
+8	Fighting Fire with Fire
+8	Nothing Else Matters
+8	Enter Sandman
+1	Blackend
+1	For Whom the Bell Tolls
+1	Welcome Home (Sanitarium)
+1	Harvester of Sorrow
+1	The Thing that should not be
+1	Bass Solo
+1	Creeping Death
+1	Fade to Black
+1	Seek and Destroy
+1	Justice for All
+1	Master of Puppets
+1	One
+1	Guitar Solo
+1	Battery
+1	Last Caress
+1	Whiplash

@@ -1,0 +1,195 @@
+---
+title: "Metallica Concerts"
+author: "Kevin Gilds, MPA"
+date: "September 10, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(tidyr)
+library(tidytext)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(wordcloud)
+library(DT)
+
+```
+
+# Metallica Concerts
+
+I was looking for something to do while hunkering down during Hurrican Irma. I love Metallica and coding in R. I am currently writing this September 10, 2017 in Bartow, FL. 
+
+
+```{r tours, echo=TRUE}
+tours <- read.delim("metallica_cours.txt") %>%
+	rename("Tour_Name" = "Tour_.Name")
+
+#kable(tours)
+```
+
+```{r setlist, echo=TRUE}
+setlist <- read.delim("setlist.txt")
+
+#kable(setlist)
+```
+
+
+```{r setlist_tour_join, echo=TRUE}
+setlist_tour <- inner_join(setlist, tours, by="id")
+
+#kable(setlist_tour)
+```
+
+
+
+I have attended eight (8) Metallica concerts from 1989 through 2017. Metallica makes available their sets list from their shows at [Met on Tour]("https://www.metallica.com/tour/past"). The only show where I had to use a different data sources is the 1989 show in Cedar Rapids, Iowa. I used this 
+[SetList]("https://www.setlist.fm/setlist/metallica/1989/hilton-coliseum-ames-ia-33d6d411.html") from Ames, Iowa as a proxy and this list matches my memory. Here is the set list from each show using a datatable. 
+```{r setlist_tour, echo=TRUE}
+setlist_tour <- setlist_tour %>%
+	select(3, 2, 6:9) 
+
+datatable(setlist_tour)
+
+
+
+
+```
+
+## Song Count by City
+
+I have seen more Metallica perform the most songs in Cedar Rapids, Iowa and a close second is Tampa, FL. 
+
+
+```{r}
+
+setlist_tour_tbl <- tours %>%
+	group_by(Tour_Name) %>%
+	select(5:6)
+
+
+kable(setlist_tour_tbl)
+
+```
+
+
+```{r}
+
+setlist_tour_city <- setlist_tour %>%
+     count(City)
+
+
+kable(setlist_tour_city)
+
+```
+
+
+
+
+
+From this set list of eight tours some song titles are repeated and on average song_titles repeat 2.3 times.
+
+```{r song_count_avg, echo=TRUE}
+song_count_avg <- setlist_tour %>%
+	count(song_title) %>%
+	summarise(song = mean(n))
+
+
+kable(song_count_avg)
+
+```
+
+Below is a graph of the song_titles I have heard more than once. At first, glance, I was surprised that I had not seen *Master of Puppets* eight times. I checked the data and it occurred to me during the [*M2K*]("https://www.metallica.com/tour/10360") Tour in St. Petersburg that Metallica performed *Masterarium*--a mix of Master of Puppets and Welcome Home Sanitarium. A fantastic performance. 
+
+
+
+```{r song_count, echo=FALSE}
+song_count <- setlist_tour %>%
+	count(song_title, sort = TRUE)
+	
+
+#kable(song_count)
+
+
+
+setlist_tour %>%
+	count(song_title) %>%
+	filter(n >2) %>%
+	mutate(song_title = reorder(song_title, n)) %>% #this changes the order of the graph
+	ggplot(aes(song_title, n)) +
+	geom_col() +
+	xlab(NULL) +
+	coord_flip()
+
+
+
+
+```
+
+
+
+```{r song_coung_avg}
+
+```
+
+
+
+("https://stackoverflow.com/questions/26114525/r-how-to-count-how-many-values-per-level-in-a-given-factor")
+
+This article helped me figure out to perform a count using factors. 
+
+## Number of Song performed
+
+On average, Metallica performed 18 songs when I went to see them. 
+
+```{r}
+tour_count_avg <- setlist_tour %>%
+	group_by(Tour_Name) %>%
+	summarise(song_title = length(song_title)) %>%
+	summarise(song_title= mean(song_title))
+
+kable(tour_count_avg)
+
+```
+
+Here is a breakdown of the number of songs played during each tour stop. 
+
+```{r}
+
+song_count_tour <- setlist_tour %>%
+	group_by(Tour_Name) %>%
+	summarise(song_title = length(song_title))
+	
+kable(song_count_tour)
+	
+
+
+```
+
+
+### Wordcloud Mess
+
+This stackover flow question and answer helped me with this WordCloud. At least it helped me plot all the songs. 
+
+("https://stackoverflow.com/questions/27981651/text-wordcloud-plotting-error")
+
+
+```{r}
+
+song_count_wc <- setlist_tour %>%
+	count(song_title) %>%
+	with(wordcloud(song_title, n, scale = c(3, 0.1)))
+	
+
+
+
+
+
+```
+```
+
+
+
+
